@@ -40,7 +40,7 @@ queue=${3}
 
 if [ -z "$PRODHOME" ]; then
   PRODHOME=`pwd`
-fi 
+fi
 
 #catch unset variables
 set -u
@@ -81,7 +81,7 @@ cd $PRODHOME
 AFSFOLD=${PRODHOME}/${name}
 # the folder where the script works, I guess
 AFS_GEN_FOLDER=${RUNHOME}/${name}
-# where to search for datacards, that have to follow a naming code: 
+# where to search for datacards, that have to follow a naming code:
 #   proc_card_mg5.dat
 #   run_card.dat
 CARDSDIR=${PRODHOME}/${carddir}
@@ -102,7 +102,7 @@ isscratchspace=0
 
 if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
   #directory doesn't exist, create it and set up environment
-  
+
   if [ ! -d ${AFS_GEN_FOLDER} ]; then
     mkdir ${AFS_GEN_FOLDER}
   fi
@@ -113,7 +113,7 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
   ############################
   #Create a workplace to work#
   ############################
-  
+
   mkdir -p ${name}_gridpack/work ; cd ${name}_gridpack/work
   WORKDIR=`pwd`
 
@@ -124,12 +124,12 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
   wget --no-check-certificate ${MGSOURCE}
   if [ $? -ne 0 ]; then
     echo "Could not find release on central server, try locally"
-    cp ${MGSOURCE_ALT} . 
+    cp ${MGSOURCE_ALT} .
   fi
   #set -e
   tar xzf ${MG}
   rm $MG
-  
+
   #############################################
   #Apply any necessary patches on top of official release
   #############################################
@@ -142,11 +142,11 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
   cp $PRODHOME/patches/mg5patches/restrict_lepton_masses_no_b_mass.dat $MGBASEDIRORIG/models/sm
 
   ################################
-  # Prepare MG input parameters 
+  # Prepare MG input parameters
   ################################
-  
+
   cd $MGBASEDIRORIG
-  
+
   ### need to patch makefile in SubProcesses ###
   #wget https://raw.githubusercontent.com/selvaggi/GridPackProducer/master/MG5_aMCatNLO/patches/Flags/makefile
   #mv makefile Template/LO/SubProcesses/
@@ -175,19 +175,19 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
       else
         echo "set cluster_type lsf" >> mgconfigscript
         echo "set cluster_queue $queue" >> mgconfigscript
-      fi 
+      fi
       echo "set cluster_status_update 60 30" >> mgconfigscript
       echo "set cluster_nb_retry 3" >> mgconfigscript
-      echo "set cluster_retry_wait 300" >> mgconfigscript 
-      
-      echo "set cluster_local_path $LHAPDF_DATA_PATH" >> mgconfigscript 
+      echo "set cluster_retry_wait 300" >> mgconfigscript
+
+      echo "set cluster_local_path $LHAPDF_DATA_PATH" >> mgconfigscript
       if [[ ! "$RUNHOME" =~ ^/afs/.* ]]; then
           echo "local path is not an afs path, batch jobs will use worker node scratch space instead of afs"
           #*FIXME* broken in mg_amc 2.4.0
-#           echo "set cluster_temp_path `echo $RUNHOME`" >> mgconfigscript 
-          echo "set cluster_retry_wait 30" >> mgconfigscript 
+#           echo "set cluster_temp_path `echo $RUNHOME`" >> mgconfigscript
+          echo "set cluster_retry_wait 30" >> mgconfigscript
           isscratchspace=1
-      fi      
+      fi
   fi
 
   echo "save options" >> mgconfigscript
@@ -197,7 +197,7 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
   ####################################
   # Access extra BSM models if needed
   ####################################
-  
+
   MODELSDIR=${PRODHOME}/models
 
   #load extra models if needed
@@ -219,7 +219,7 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
             tar zxvf ../$model
           elif [[ $model == *".tar"* ]]; then
             tar xavf ../$model
-          else 
+          else
             echo "A BSM model is specified but it is not in a standard archive (.zip or .tar)"
           fi
           cd ..
@@ -233,7 +233,7 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
   fi
 
   cd $WORKDIR
-  
+
   if [ "$name" == "interactive" ]; then
     set +e
     set +u
@@ -251,13 +251,13 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
   if [ ! -d $CARDSDIR ]; then
     echo $CARDSDIR " does not exist!"
     if [ "${BASH_SOURCE[0]}" != "${0}" ]; then return 1; else exit 1; fi
-  fi  
-  
+  fi
+
   ########################
   #Locating the proc card#
   ########################
 
- 
+
   if [ ! -e $CARDSDIR/proc_card.dat ]; then
     echo $CARDSDIR/proc_card.dat " does not exist!"
     if [ "${BASH_SOURCE[0]}" != "${0}" ]; then return 1; else exit 1; fi
@@ -266,8 +266,8 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
   if [ ! -e $CARDSDIR/run_card.dat ]; then
     echo $CARDSDIR/run_card.dat " does not exist!"
     if [ "${BASH_SOURCE[0]}" != "${0}" ]; then return 1; else exit 1; fi
-  fi  
-  
+  fi
+
   cp $CARDSDIR/proc_card.dat proc_card.dat
   echo "output ${name}" >> proc_card.dat
 
@@ -278,7 +278,7 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
 
   ./$MGBASEDIRORIG/bin/mg5_aMC proc_card.dat
 
-#   echo "cluster_local_path = `${LHAPDFCONFIG} --datadir`" >> ./$MGBASEDIRORIG/input/mg5_configuration.txt    
+#   echo "cluster_local_path = `${LHAPDFCONFIG} --datadir`" >> ./$MGBASEDIRORIG/input/mg5_configuration.txt
   #*FIXME* workaround for broken set cluster_queue handling (only needed for LSF)
   if [ "$queue" != "condor" ]; then
     echo "cluster_queue = $queue" >> ./$MGBASEDIRORIG/input/mg5_configuration.txt
@@ -290,13 +290,13 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
       echo "Patching generated matrix element code with " $CARDSDIR/patch_me.sh
       /bin/bash "$CARDSDIR/patch_me.sh" "$WORKDIR/$MGBASEDIRORIG"
   fi;
-  
-else  
+
+else
   echo "Reusing existing directory assuming generated code already exists"
   echo "WARNING: If you changed the process card you need to clean the folder and run from scratch"
-  
+
   cd $AFS_GEN_FOLDER
-  
+
   WORKDIR=$AFS_GEN_FOLDER/${name}_gridpack/work/
   if [ ! -d ${WORKDIR} ]; then
     echo "Existing directory does not contain expected folder $WORKDIR"
@@ -307,13 +307,13 @@ else
 
   if [ "$name" == "interactive" ]; then
     set +e
-    set +u  
+    set +u
     if [ "${BASH_SOURCE[0]}" != "${0}" ]; then return 0; else exit 0; fi
   else
     echo "Reusing an existing process directory ${name} is not actually supported in production at the moment.  Please clean or move the directory and start from scratch."
     if [ "${BASH_SOURCE[0]}" != "${0}" ]; then return 1; else exit 1; fi
   fi
-  
+
   if [ -z ${carddir} ]; then
     echo "Card directory not provided"
     if [ "${BASH_SOURCE[0]}" != "${0}" ]; then return 1; else exit 1; fi
@@ -323,13 +323,13 @@ else
     echo $CARDSDIR " does not exist!"
     if [ "${BASH_SOURCE[0]}" != "${0}" ]; then return 1; else exit 1; fi
   fi
-  
+
   if [ ! -e $CARDSDIR/run_card.dat ]; then
     echo $CARDSDIR/run_card.dat " does not exist!"
     if [ "${BASH_SOURCE[0]}" != "${0}" ]; then return 1; else exit 1; fi
-  fi  
+  fi
 
-fi  
+fi
 
 if [ -d gridpack ]; then
   rm -rf gridpack
@@ -397,6 +397,10 @@ if [ -e $CARDSDIR/reweight_card.dat ]; then
   cp $CARDSDIR/reweight_card.dat ./Cards/reweight_card.dat
 fi
 
+if [ -e $CARDSDIR/param_card.dat ]; then
+  echo "copying custom param_card.dat file"
+  cp $CARDSDIR/param_card.dat ./Cards/param_card.dat
+fi
 
 #automatically detect NLO mode or LO mode from output directory
 isnlo=0
@@ -405,17 +409,17 @@ if [ -e ./MCatNLO ]; then
 fi
 
 if [ "$isnlo" -gt "0" ]; then
-#NLO mode  
+#NLO mode
   #######################
   #Run the integration and generate the grid
   #######################
-  
+
   echo "starting NLO mode"
-  
+
   if [ -e $CARDSDIR/madspin_card.dat ]; then
     cp $CARDSDIR/madspin_card.dat ./Cards/madspin_card.dat
   fi
-  
+
   echo "shower=OFF" > makegrid.dat
   echo "done" >> makegrid.dat
   if [ -e $CARDSDIR/customizecards.dat ]; then
@@ -431,40 +435,40 @@ if [ "$isnlo" -gt "0" ]; then
       mv header_for_madspin.txt $WORKDIR
       gzip ./Events/pilotrun_decayed_1/events.lhe
   fi
-  
+
   echo "mg5_path = ../mgbasedir" >> ./Cards/amcatnlo_configuration.txt
 #   echo "ninja = ../mgbasedir/HEPTools/lib" >> ./Cards/amcatnlo_configuration.txt
   echo "cluster_temp_path = None" >> ./Cards/amcatnlo_configuration.txt
 
   cd $WORKDIR
-  
+
   mkdir gridpack
 
   mv processtmp gridpack/process
 
   cp -a $MGBASEDIRORIG/ gridpack/mgbasedir
-  
+
   cd gridpack/process
 
   cp $PRODHOME/run_nlo.sh run.sh
-  
+
   cp $PRODHOME/patches/mg5patches/fixpaths.py .
   python fixpaths.py
 
-  
+
   if [ -e $CARDSDIR/externaltarball.dat ]; then
-    mv $WORKDIR/header_for_madspin.txt . 
+    mv $WORKDIR/header_for_madspin.txt .
   fi
-  
+
   cd ..
-  
-else 
+
+else
   #LO mode
   #######################
   #Run the integration and generate the grid
   #######################
-  echo "starting LO mode"  
-  
+  echo "starting LO mode"
+
   echo "done" > makegrid.dat
   echo "set gridpack True" >> makegrid.dat
   if [ -e $CARDSDIR/customizecards.dat ]; then
@@ -477,7 +481,7 @@ else
   cat makegrid.dat | ./bin/generate_events pilotrun
 
   cd $WORKDIR
-    
+
   echo "cleaning temporary output"
   mv $WORKDIR/processtmp/pilotrun_gridpack.tar.gz $WORKDIR/
   mv $WORKDIR/processtmp/Events/pilotrun/unweighted_events.lhe.gz $WORKDIR/
@@ -488,7 +492,7 @@ else
   tar -xzf $WORKDIR/pilotrun_gridpack.tar.gz
   echo "cleaning temporary gridpack"
   rm $WORKDIR/pilotrun_gridpack.tar.gz
-  
+
   # precompile reweighting if necessary
   if [ -e $CARDSDIR/reweight_card.dat ]; then
       pwd
@@ -510,9 +514,9 @@ else
         done
         cd -
       done
-      cd ..      
+      cd ..
   fi
-  
+
   #prepare madspin grids if necessary
   if [ -e $CARDSDIR/madspin_card.dat ]; then
     echo "import $WORKDIR/unweighted_events.lhe.gz" > madspinrun.dat
@@ -524,23 +528,23 @@ else
   fi
 
   echo "preparing final gridpack"
-  
+
   #set to single core mode
   echo "mg5_path = ../../mgbasedir" >> ./madevent/Cards/me5_configuration.txt
   echo "cluster_temp_path = None" >> ./madevent/Cards/me5_configuration.txt
-  echo "run_mode = 0" >> ./madevent/Cards/me5_configuration.txt  
-    
+  echo "run_mode = 0" >> ./madevent/Cards/me5_configuration.txt
+
   cd $WORKDIR
-  
+
   mkdir gridpack
   mv process gridpack/process
   cp -a $MGBASEDIRORIG/ gridpack/mgbasedir
 
   cd gridpack
-  
+
   # add correct gcc environment for running gridpack
   sed -i '2s#^#source /cvmfs/sft.cern.ch/lcg/releases/LCG_88/gcc/4.9.3/x86_64-slc6/setup.sh\n#' process/run.sh
-  
+
 fi
 
 
@@ -549,13 +553,13 @@ $PRODHOME/cleangridpack.sh
 
 #
 #Plan to decay events from external tarball?
-# 
+#
 
 if [ -e $CARDSDIR/externaltarball.dat ]; then
     echo "Locating the external tarball"
     cp $CARDSDIR/externaltarball.dat .
     source $CARDSDIR/externaltarball.dat
-    echo $EXTERNAL_TARBALL 
+    echo $EXTERNAL_TARBALL
     cp $EXTERNAL_TARBALL .
     tarname=$(basename $EXTERNAL_TARBALL)
     mkdir external_tarball
@@ -580,7 +584,7 @@ fi
 
 mv ${name}.tar.gz ${PRODHOME}/${name}.tar.gz
 
-#remove process dir 
+#remove process dir
 echo "Removing process directory ..."
 rm -rf ${PRODHOME}/${name}
 
