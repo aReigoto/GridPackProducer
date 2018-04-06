@@ -397,10 +397,10 @@ if [ -e $CARDSDIR/reweight_card.dat ]; then
   cp $CARDSDIR/reweight_card.dat ./Cards/reweight_card.dat
 fi
 
-if [ -e $CARDSDIR/param_card.dat ]; then
-  echo "copying custom param_card.dat file"
-  cp $CARDSDIR/param_card.dat ./Cards/param_card.dat
-fi
+# # #if [ -e $CARDSDIR/param_card.dat ]; then
+# # #  echo "copying custom param_card.dat file"
+# # #  cp $CARDSDIR/param_card.dat ./Cards/param_card.dat
+# # #fi
 
 #automatically detect NLO mode or LO mode from output directory
 isnlo=0
