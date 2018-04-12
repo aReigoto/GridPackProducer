@@ -1,5 +1,5 @@
 set param_card Lambda 1.000000e+03
-set param_card cosa 0.000000e+00
+set param_card cosa 0.500000e+00
 set param_card kSM 1.000000e+00
 set param_card kHtt 1.000000e+00
 set param_card kAtt 1.000000e+00
