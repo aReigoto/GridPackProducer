@@ -37,3 +37,4 @@ define vl~ = ve~ vm~
 set loop_optimized_output True
 define p = g u c d s u~ c~ d~ s~
 generate p p > x0 t t~ [QCD]
+
