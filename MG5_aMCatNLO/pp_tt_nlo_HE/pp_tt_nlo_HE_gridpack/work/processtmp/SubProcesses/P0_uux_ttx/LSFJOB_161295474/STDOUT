@@ -1,0 +1,11 @@
+@(#)CERN job starter $Date: 2010/06/23 14:22:16 $
+Working directory is </pool/lsf/areigoto/161295474> on <b6bfcc871b.cern.ch>
+
+/pool/spool/1524504099.161295474.shell: line 1: scramv1: command not found
+/afs/cern.ch/user/a/areigoto/developing/FCC/Gridpack_Producer_Folders/GridPackProducer/MG5_aMCatNLO/pp_tt_nlo_HE/pp_tt_nlo_HE_gridpack/work/processtmp/SubProcesses/P0_uux_ttx
+
+Job finished at Mon Apr 23 19:25:23 CEST 2018 on node 
+ under linux version Scientific Linux CERN SLC release 6.9 (Carbon)
+
+CERN statistics: This process used approximately : 0:01:05 KSI2K hours (65 KSI2K seconds)
+                 This process corresponds to     : 0:04:13 HS06  hours (253 HS06  seconds)
