@@ -121,3 +121,4 @@ Block QNUMBERS 82  # gh
         2 1  # number of spin states (2S+1)
         3 8  # colour rep (1: singlet, 3: triplet, 8: octet)
         4 1  # Particle/Antiparticle distinction (0=own anti)
+

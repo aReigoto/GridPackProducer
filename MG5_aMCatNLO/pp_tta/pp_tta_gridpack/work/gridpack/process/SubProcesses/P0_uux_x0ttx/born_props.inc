@@ -1,0 +1,12 @@
+      PMASS( -1,   1)  = ABS(MDL_MT)
+      PWIDTH( -1,   1) = ABS(MDL_WT)
+      POW( -1,   1) = 1
+      PMASS( -2,   1)  = ZERO
+      PWIDTH( -2,   1) = ZERO
+      POW( -2,   1) = 2
+      PMASS( -1,   2)  = ABS(MDL_MT)
+      PWIDTH( -1,   2) = ABS(MDL_WT)
+      POW( -1,   2) = 1
+      PMASS( -2,   2)  = ZERO
+      PWIDTH( -2,   2) = ZERO
+      POW( -2,   2) = 2
