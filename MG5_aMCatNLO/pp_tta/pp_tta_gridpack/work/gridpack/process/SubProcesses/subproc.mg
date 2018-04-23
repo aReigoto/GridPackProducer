@@ -1,3 +1,0 @@
-P0_gg_x0ttx
-P0_uux_x0ttx
-P0_uxu_x0ttx
