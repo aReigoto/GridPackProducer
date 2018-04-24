@@ -1,0 +1,184 @@
+==== LHAPDF6 USING DEFAULT-TYPE LHAGLUE INTERFACE ====
+LHAPDF 6.1.6 loading /afs/cern.ch/work/s/selvaggi/public/LHAPDF-6.1.6/build/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0000.dat
+NNPDF30_nlo_as_0118 PDF set, member #0, version 2; LHAPDF ID = 260000
+ A PDF is used, so alpha_s(MZ) is going to be modified
+ Old value of alpha_s from param_card:   0.11799999999999999     
+ New value of alpha_s from PDF lhapdf :  0.11800222660863767     
+ using LHAPDF
+ Results.dat xsec =    1134.3000000000000       abs xsec =    1135.0999999999999     
+ Found            7  subprocesses
+ SubProcess/Channel     kept   read   xsec 
+P3_gg_tqqq/G1.02/       0    2687 0.000E+00
+P3_gg_tqqq/G3/       0    4652 0.000E+00
+P3_gg_tqqq/G4/       0   16234 0.000E+00
+P3_gg_tqqq/G5/       0   25454 0.000E+00
+P3_gg_tqqq/G7/       0   27208 0.000E+00
+P3_gg_tqqq/G8/       0   27244 0.000E+00
+P3_gg_tqqq/G9/       0   30986 0.000E+00
+P3_gg_tqqq/G10.02/       0   32890 0.000E+00
+P3_gg_tqqq/G11/       0   34388 0.000E+00
+P3_gg_tqqq/G12.02/       0   35147 0.000E+00
+P3_gg_tqqq/G17/       0   36487 0.000E+00
+P3_gg_tqqq/G18/       0   43608 0.000E+00
+P3_gg_tqqq/G20/       0   44641 0.000E+00
+P3_gg_tqqq/G21/       0   45070 0.000E+00
+P3_gg_tqqq/G22.02/       0   47260 0.000E+00
+P3_gg_tqqq/G24/       0   48669 0.000E+00
+P3_gq_tgqq/G1.06/       0   50332 0.000E+00
+P3_gq_tgqq/G2.02/       0   50375 0.000E+00
+P3_gq_tgqq/G3.02/       0   51500 0.000E+00
+P3_gq_tgqq/G4.02/       0   54947 0.000E+00
+P3_gq_tgqq/G5/       1   57866 0.284E+01
+P3_gq_tgqq/G6/       1   59464 0.284E+01
+P3_gq_tgqq/G7/       4   61111 0.114E+02
+P3_gq_tgqq/G8/       4   61310 0.114E+02
+P3_gq_tgqq/G9/       9   61553 0.255E+02
+P3_gq_tgqq/G10/      12   65111 0.341E+02
+P3_gq_tgqq/G11.02/      16   68297 0.454E+02
+P3_gq_tgqq/G12.02/      19   70027 0.539E+02
+P3_gq_tgqq/G13.02/      19   73139 0.539E+02
+P3_gq_tgqq/G14.06/      19   73695 0.539E+02
+P3_gq_tgqq/G15.02/      20   76745 0.568E+02
+P3_gq_tgqq/G16.02/      20   77055 0.568E+02
+P3_gq_tgqq/G17/      21   78262 0.596E+02
+P3_gq_tgqq/G18/      22   80787 0.624E+02
+P3_gq_tgqq/G19/      23   81849 0.653E+02
+P3_gq_tgqq/G20/      24   83942 0.681E+02
+P3_gq_tgqq/G21.02/      24   84765 0.681E+02
+P3_gq_tgqq/G22/      24   85369 0.681E+02
+P3_gq_tgqq/G23/      24   85664 0.681E+02
+P3_gq_tgqq/G24.02/      24   88452 0.681E+02
+P3_gq_tgqq/G25/      24   90734 0.681E+02
+P3_gq_tgqq/G26/      24   95296 0.681E+02
+P3_gq_tgqq/G28/      24   97961 0.681E+02
+P3_gq_tgqq/G29/      24  100370 0.681E+02
+P3_gq_tgqq/G30/      24  100517 0.681E+02
+P3_gq_tgqq/G32/      24  101474 0.681E+02
+P3_gq_tgqq/G33/      24  105072 0.681E+02
+P3_gq_tgqq/G35/      24  107852 0.681E+02
+P3_gq_tgqq/G36/      24  107912 0.681E+02
+P3_gq_tgqq/G37/      24  109737 0.681E+02
+P3_gq_tgqq/G38/      24  111439 0.681E+02
+P3_gq_tgqq/G39/      24  114514 0.681E+02
+P3_gq_tgqq/G40/      24  114854 0.681E+02
+P3_gq_tgqq/G45/      24  116155 0.681E+02
+P3_gq_tgqq/G47/      24  118338 0.681E+02
+P3_gq_tgqq/G48/      24  119161 0.681E+02
+P3_qq_tggq/G1/      24  121610 0.681E+02
+P3_qq_tggq/G2/      25  122746 0.709E+02
+P3_qq_tggq/G3/      25  125168 0.709E+02
+P3_qq_tggq/G4/      25  128930 0.709E+02
+P3_qq_tggq/G9/      25  132553 0.709E+02
+P3_qq_tggq/G10/      25  142382 0.709E+02
+P3_qq_tggq/G13/      25  144937 0.709E+02
+P3_qq_tggq/G15/      25  154740 0.709E+02
+P3_qq_tggq/G16/      25  159568 0.709E+02
+P3_qq_tggq/G17/      25  162135 0.709E+02
+P3_qq_tggq/G18/      25  163058 0.709E+02
+P3_qq_tggq/G19/      26  167624 0.738E+02
+P3_qq_tggq/G21/      26  167704 0.738E+02
+P3_qq_tggq/G23/      26  170743 0.738E+02
+P3_qq_tggq/G25.18/      26  171266 0.738E+02
+P3_qq_tggq/G26.06/      26  171337 0.738E+02
+P3_qq_tggq/G29.02/      26  171441 0.738E+02
+P3_qq_tggq/G30.06/      26  172832 0.738E+02
+P3_qq_tggq/G31.02/      26  173336 0.738E+02
+P3_qq_tggq/G33.02/      26  173834 0.738E+02
+P3_qq_tggq/G34.06/      26  176391 0.738E+02
+P3_qq_tggq/G35.02/      26  178273 0.738E+02
+P3_qq_tggq/G36.02/      26  179773 0.738E+02
+P3_qq_tggq/G41.06/      26  180735 0.738E+02
+P3_qq_tggq/G42.02/      26  183246 0.738E+02
+P3_qq_tggq/G43.02/      26  185715 0.738E+02
+P3_qq_tggq/G47.02/      26  187865 0.738E+02
+P3_qq_tggq/G48.02/      26  187965 0.738E+02
+P3_qq_tggq/G49/      26  197052 0.738E+02
+P3_qq_tggq/G50/      26  199643 0.738E+02
+P3_qq_tggq/G53/      26  199839 0.738E+02
+P3_qq_tggq/G54/      26  199921 0.738E+02
+P3_qq_tggq/G55/      26  201092 0.738E+02
+P3_qq_tggq/G57/      26  202236 0.738E+02
+P3_qq_tggq/G58/      26  204595 0.738E+02
+P3_qq_tggq/G59/      26  206474 0.738E+02
+P3_qq_tggq/G60/      26  209240 0.738E+02
+P3_qq_tggq/G65/      26  209290 0.738E+02
+P3_qq_tggq/G67/      26  209794 0.738E+02
+P3_qq_tggq/G69/      26  210876 0.738E+02
+P3_qq_tggq/G70/      26  211146 0.738E+02
+P3_qq_tggq/G71/      26  211950 0.738E+02
+P3_qq_tqqq/G1/      26  213914 0.738E+02
+P3_qq_tqqq/G2/      27  214789 0.766E+02
+P3_qq_tqqq/G3.02/      29  219561 0.823E+02
+P3_qq_tqqq/G4.02/      29  219668 0.823E+02
+P3_qq_tqqq/G5/      29  221379 0.823E+02
+P3_qq_tqqq/G6/      31  222416 0.880E+02
+P3_qq_tqqq/G7.02/      31  224677 0.880E+02
+P3_qq_tqqq/G8.02/      32  225850 0.908E+02
+P3_qq_tqqq/G17/      32  227068 0.908E+02
+P3_qq_tqqq/G19/      32  228406 0.908E+02
+P3_qq_tqqq/G20/      32  228518 0.908E+02
+P3_qq_tqqq/G21/      33  228667 0.936E+02
+P3_qq_tqqq/G22/      33  229330 0.936E+02
+P3_qq_tqqq/G23/      33  229501 0.936E+02
+P3_qq_tqqq/G24/      34  229716 0.965E+02
+P3_qq_tqqq/G29.02/      34  229975 0.965E+02
+P3_qq_tqqq/G31/      34  231395 0.965E+02
+P3_qq_tqqq/G32/      34  235189 0.965E+02
+P3_qq_tqqq/G41.02/      34  235214 0.965E+02
+P3_qq_tqqq/G42.06/      34  235839 0.965E+02
+P3_qq_tqqq/G43.02/      34  235868 0.965E+02
+P3_qq_tqqq/G44.02/      34  236999 0.965E+02
+P3_qq_tqqq/G61/      34  237193 0.965E+02
+P3_qq_tqqq/G63/      34  242330 0.965E+02
+P3_qq_tqqq/G64/      34  243054 0.965E+02
+P3_qq_tqqq/G73/      34  244410 0.965E+02
+P3_qq_tqqq/G74/      34  245448 0.965E+02
+P3_qq_tqqq/G77/      34  245814 0.965E+02
+P3_qq_tqqq/G78/      34  247135 0.965E+02
+P2_gq_tqq/G1.02/      36  250548 0.102E+03
+P2_gq_tqq/G2/      49  252786 0.139E+03
+P2_gq_tqq/G3.02/      50  254938 0.142E+03
+P2_gq_tqq/G4/      89  256497 0.253E+03
+P2_gq_tqq/G5/      89  261845 0.253E+03
+P2_gq_tqq/G6/      90  262794 0.255E+03
+P2_gq_tqq/G7/      92  266123 0.261E+03
+P2_qq_tgq/G1/      97  267098 0.275E+03
+P2_qq_tgq/G2/      98  277161 0.278E+03
+P2_qq_tgq/G3/      98  278043 0.278E+03
+P2_qq_tgq/G4/     105  283741 0.298E+03
+P2_qq_tgq/G5.06/     105  284288 0.298E+03
+P2_qq_tgq/G6.02/     105  284374 0.298E+03
+P2_qq_tgq/G7.02/     105  284618 0.298E+03
+P2_qq_tgq/G8.02/     107  287056 0.304E+03
+P2_qq_tgq/G9/     107  294796 0.304E+03
+P2_qq_tgq/G10/     107  296118 0.304E+03
+P2_qq_tgq/G11/     107  296142 0.304E+03
+P2_qq_tgq/G12/     108  297172 0.306E+03
+P1_qq_tq/G1/     330  297955 0.936E+03
+P1_qq_tq/G2.02/     336  299443 0.953E+03
+P1_qq_tq/G3/     342  299449 0.106E+04
+ Iteration            1  too large truncation    3.9674298335640054E-002          99
+ Iteration            2  too large truncation    2.2198570180300234E-002          70
+ Iteration            3  too few events    0.0000000000000000               65
+ Iteration            4  too few events    4.4024536754458726E-003          62
+ Iteration            5  too few events    9.0786672676788777E-003          87
+ Iteration            6  too large truncation    1.3521070180300243E-002          67
+ Iteration            7  too few events    0.0000000000000000               64
+ Iteration            8  too few events    0.0000000000000000               51
+ Iteration            9  too few events    0.0000000000000000               45
+ Iteration           10  too few events    3.8492371490502554E-003          66
+ Iteration           11  too few events    8.5531115676030448E-003          52
+ Iteration           12  too large truncation    1.3021792265228208E-002          60
+ Iteration           13  too few events    0.0000000000000000               59
+ Iteration           14  too few events    0.0000000000000000               61
+ Iteration           15  too few events    0.0000000000000000               51
+ Iteration           16  too few events    3.2927482258849187E-003          60
+ Iteration           17  too few events    8.0244470905959896E-003          66
+ Iteration           18  too large truncation    1.2519561012071486E-002          74
+Thanks for using LHAPDF 6.1.6. Please make sure to cite the paper:
+  Eur.Phys.J. C75 (2015) 3, 132  (http://arxiv.org/abs/1412.7420)
+ Iteration           19  too few events    0.0000000000000000               53
+ Iteration           20  too few events    0.0000000000000000               59
+ Unable to get          100  events. Writing           59
+ Unweighting selected           59  events.
+Truncated  0.00% of cross section

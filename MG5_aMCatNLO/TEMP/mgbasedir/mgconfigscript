@@ -1,0 +1,12 @@
+set auto_update 0
+set automatic_html_opening False
+set lhapdf /afs/cern.ch/work/s/selvaggi/public/LHAPDF-6.1.6/build/bin/lhapdf-config
+set run_mode  1
+set cluster_type lsf
+set cluster_queue 1nd
+set cluster_status_update 60 30
+set cluster_nb_retry 3
+set cluster_retry_wait 300
+set cluster_local_path /afs/cern.ch/work/s/selvaggi/public/LHAPDF-6.1.6/build/share/LHAPDF
+set cluster_retry_wait 30
+save options

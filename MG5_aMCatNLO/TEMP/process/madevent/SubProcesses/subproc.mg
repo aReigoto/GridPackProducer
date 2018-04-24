@@ -1,0 +1,7 @@
+P3_gg_tqqq
+P3_gq_tgqq
+P3_qq_tggq
+P3_qq_tqqq
+P2_gq_tqq
+P2_qq_tgq
+P1_qq_tq
