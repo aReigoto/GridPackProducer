@@ -1,3 +1,5 @@
 pp_*.log
 pp_*.tar.gz
 LSFJOB*
+TEMP
+TEMP/*
