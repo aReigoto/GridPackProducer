@@ -1,1 +1,0 @@
-DIRNAME=P3_gg_tqqq

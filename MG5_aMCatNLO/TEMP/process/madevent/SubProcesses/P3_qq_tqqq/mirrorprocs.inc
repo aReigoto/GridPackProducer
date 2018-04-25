@@ -1,9 +1,0 @@
-      DATA (MIRRORPROCS(I),I=1,66)/.FALSE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.
-     $ ,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.
-     $ ,.FALSE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.
-     $ ,.TRUE.,.TRUE.,.TRUE.,.FALSE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.
-     $ ,.TRUE.,.TRUE.,.TRUE.,.FALSE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.
-     $ ,.TRUE.,.FALSE.,.TRUE.,.TRUE.,.FALSE.,.TRUE.,.TRUE.,.TRUE.
-     $ ,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.
-     $ ,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.,.TRUE.
-     $ ,.TRUE.,.TRUE.,.TRUE./
