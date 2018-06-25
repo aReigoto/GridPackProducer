@@ -44,7 +44,7 @@ define bos = Z W+ W- a
 define top = t t~
 define bosh = Z W+ W-
 # Specify process(es) to run
-generate p p > top top h
-add process p p > top top h j
-add process p p > top top h j j
-add process p p > top top h j j j
+generate p p > top top h QED=1 @0
+add process p p > top top h j QED=1 @1
+add process p p > top top h j j QED=1 @2
+add process p p > top top h j j j QED=1 @3
